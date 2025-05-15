@@ -4,10 +4,12 @@ import { AdminComponent } from './component/admin/admin.component';
 import { DataBindingComponent } from './component/data-binding/data-binding.component';
 import { NgIfComponent } from './component/ng-if/ng-if.component';
 import { NgForComponent } from './component/ng-for/ng-for.component';
+import { NgClass } from '@angular/common';
+import { NgClassComponent } from './component/ng-class/ng-class.component';
 
 @Component({
   selector: 'app-root',
-  imports: [AdminComponent, DataBindingComponent, NgIfComponent, NgForComponent],
+  imports: [AdminComponent, DataBindingComponent, NgIfComponent, NgForComponent, NgClassComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

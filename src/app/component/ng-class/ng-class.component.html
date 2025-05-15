@@ -1,0 +1,33 @@
+<h2>Attribute Directives</h2>
+<p>
+  Attribute directives are used to change the appearance or behavior of an
+  element, component, or another directive. They are typically used to modify
+  the properties of an element or to add event listeners.
+</p>
+
+<h3>ngClass</h3>
+<p>
+  The ngClass directive is an Angular built-in directive that allows you to
+  conditionally apply CSS classes to an HTML element based on the evaluation of
+  an expression.
+</p>
+
+<div class="row">
+  <div class="col-5">
+    <h3>Example:</h3>
+    <p>
+      In this example, we will use ngClass to conditionally apply CSS classes.
+    </p>
+
+    <div
+      [ngClass]="divBgColor1"
+      style="width: 200px; height: 100px; border: 1px solid black"
+    >
+      div1
+    </div>
+
+    <button (click)="addDivBgColor1('green')">Add Green</button>
+    <button (click)="addDivBgColor1('red')">Add Red</button>
+    <button (click)="addDivBgColor1('blue')">Add Blue</button>
+  </div>
+</div>
