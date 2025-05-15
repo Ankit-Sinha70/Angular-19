@@ -1,0 +1,91 @@
+<div class="row">
+  <div class="col-12">
+    <h1>Data Binding</h1>
+    <p>
+      Data binding is a mechanism to coordinate the communication between a
+      component and its template.
+    </p>
+    <p>There are four types of data binding in Angular:</p>
+    <ul>
+      <li>Interpolation</li>
+      <li>Property Binding</li>
+      <li>Event Binding</li>
+      <li>Two-way Binding</li>
+    </ul>
+
+    <h2>Interpolation</h2>
+    <p>
+      Interpolation is a one-way data binding technique that allows you to
+      display component data in the template. It uses double curly braces to
+      bind data from the component to the template.
+    </p>
+
+    <p>
+      FirstName: {{ firstName }}<br />
+      LastName: {{ lastName }}<br />
+    </p>
+    <span> isDisables: {{ isDisabled }}<br /> </span>
+
+    <h2>Property Binding</h2>
+    <p>
+      Property binding is a one-way data binding technique that allows you to
+      bind a property of a DOM element to a component property. It uses square
+      brackets to bind data from the component to the template.
+    </p>
+    <p>
+      <input
+        type="text"
+        [disabled]="isDisabled"
+        [value]="firstName"
+      />
+      <br />
+      <input
+        type="text"
+        [disabled]="isDisabled"
+        [value]="lastName"
+      />
+      <br />
+    </p>
+  </div>
+
+  <div class="col-12">
+    <h2>Event Binding</h2>
+    <p>
+      Event binding is a one-way data binding technique that allows you to bind
+      an event of a DOM element to a component method. It uses parentheses to
+      bind data from the template to the component.
+    </p>
+    <p>
+      <!-- <button (click)="onClick()">Click Me!</button>
+      <br />
+      <button (click)="onClick($event)">Click Me!</button>
+      <br />
+      <button (click)="onClick($event, 'Hello')">Click Me!</button>
+      <br />
+      <button (click)="onClick($event, 'Hello', 'World')">Click Me!</button>
+      <br />
+      <button (click)="onClick($event, 'Hello', 'World', 1)">Click Me!</button> -->
+    </p>
+
+    <h2>Two-way Binding</h2>
+    <p>
+      Two-way binding is a combination of property binding and event binding.
+      It allows you to bind data from the component to the template and vice
+      versa. It uses square brackets and parentheses to bind data from the
+      component to the template and vice versa.
+    </p>
+    <!-- <p>
+      <input
+        type="text"
+        [(ngModel)]="firstName"
+        [disabled]="isDisabled"
+      />
+      <br />
+      <input
+        type="text"
+        [(ngModel)]="lastName"
+        [disabled]="isDisabled"
+      />
+      <br /> -->
+  </div>
+</div>
