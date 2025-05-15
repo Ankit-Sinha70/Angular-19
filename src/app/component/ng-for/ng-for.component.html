@@ -1,0 +1,43 @@
+<h2>What is the use of nfFor</h2>
+<p>
+  ngFor is a structural directive in Angular that allows you to iterate over a
+  collection (like an array) and render a template for each item in the
+  collection.
+</p>
+<p>
+  It is commonly used to display lists of data in a dynamic and efficient way.
+</p>
+<p>
+  ngFor is a powerful directive that can be used to create dynamic lists,
+  tables, and other repeating structures in your Angular applications.
+</p>
+<p>
+  It is a part of Angular's template syntax and is used to create dynamic views
+  based on data.
+</p>
+
+<!-- Example: -->
+
+<div class="row">
+  <div>
+    <h3>Example:</h3>
+    <p>In this example, we will use ngFor to display a list of cities.</p>
+    <ul>
+      <li *ngFor="let city of cityList">{{ city }}</li>
+      <!-- display city and its population -->
+      <li *ngFor="let city of cityListObj">
+        {{ city.name }} - {{ city.population }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+      <div class="col-5">
+        <select>
+          <option *ngFor="let cityValue of cityListObj1" [value]="cityValue.id">
+            {{ cityValue.name }} - {{ cityValue.population }}
+          </option>
+        </select>
+      </div>
+  </div>
+</div>

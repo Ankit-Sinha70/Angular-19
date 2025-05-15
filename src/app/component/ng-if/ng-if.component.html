@@ -1,0 +1,35 @@
+<h2>Directives</h2>
+<p>
+  Directives are classes that add additional behavior to elements in your
+  Angular applications. There are three types of directives: components,
+  structural directives, and attribute directives.
+</p>
+<h2>Types Of Directives</h2>
+<p>There are three types of directives in Angular:</p>
+<ul>
+  <li>Components</li>
+  <li>Structural Directives</li>
+  <li>Attribute Directives</li>
+</ul>
+
+<!-- Examples -->
+
+<div class="row">
+  <div
+    class="row-2"
+    style="
+      background-color: green;
+      color: white;
+      padding: 10px;
+      height: 20px;
+      width: 200px;
+    "
+    *ngIf="div1Visible"
+  >
+    div 1
+  </div>
+  <div style="display: flex; justify-content: flex-start; gap: 10px; padding-top: 10px;">
+    <button (click)="isDivShow()">Show</button>
+    <button (click)="isDivHide()">Hide</button>
+  </div>
+</div>
