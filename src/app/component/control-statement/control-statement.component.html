@@ -1,0 +1,49 @@
+<h2>Control Statement</h2>
+<p>
+  Control statements are used to control the flow of execution in a program. In
+  Angular, we can use structural directives like *ngIf, *ngFor, and *ngSwitch to
+  implement control statements.
+</p>
+<p>
+  In this example, we will use *ngIf to conditionally display a message based on
+  the value of a variable.
+</p>
+
+<p>
+  In this example, we will use *ngFor to iterate over an array of items and
+  display them in a list.
+</p>
+<p>
+  In this example, we will use *ngSwitch to display different messages based on
+  the value of a variable.
+</p>
+
+<div style="display: flex; gap: 20px;">
+  @if (isDivVisible == true) {
+    <div style="background-color: green; width: 200px; border: 1pxsolid black; height: 50px; text-align: center;">
+      div 1
+    </div>
+
+  }
+  <div style="background-color: red; width: 200px; border: 1pxsolid black; text-align: center;">
+    div 2 
+  </div>
+</div>
+<div style="margin-top: 20px; gap: 10px; display: flex;">
+  <button (click)="hideShowDiv1(true)">Show</button>
+  <button (click)="hideShowDiv1(false)">Hide</button>
+</div>
+
+<p>ngFor Example</p>
+<div style="display: flex; gap: 20px;">
+  @if (isChecked == true) {
+    <div style="background-color: red; width: 200px; height: 50px; border: 1px solid black; text-align: center;">
+      Checkbox is checked
+    </div>
+  } @else {
+    <div style="background-color: blue; width: 200px; height: 50px; border: 1px solid black; text-align: center;">
+      Checkbox is Unchecked
+    </div>
+  }
+</div>
+<input type="checkbox" [(ngModel)]="isChecked" />

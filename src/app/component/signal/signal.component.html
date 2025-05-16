@@ -1,0 +1,74 @@
+<h2>Signals in Angular</h2>
+<p>
+  Signals are a new way to manage state in Angular applications. They provide a
+  more efficient and reactive way to handle changes in data, making it easier to
+  build dynamic and responsive user interfaces.
+</p>
+
+<p>
+  In this example, we will use signals to manage the state of a counter. We will
+  create a signal that increments the counter value when a button is clicked.
+</p>
+
+<div style="display: flex; gap: 20px">
+  <div
+    style="
+      background-color: lightblue;
+      width: 200px;
+      height: 30px;
+      border: 1px solid black;
+      text-align: center;
+    "
+  >
+  <b>{{ count }}</b>
+  </div>
+  <button (click)="increment()">Increment</button>
+  <button (click)="decrement()">Decrement</button>
+  <button (click)="reset()">Reset</button>
+</div>
+
+<h3>How to create signla</h3>
+<p>
+  To create a signal, we can use the <code>signal</code> function from the
+  <code>angular/core</code> package. The <code>signal</code> function takes an
+  initial value as an argument and returns a signal object that we can use to
+  manage the state.
+</p>
+<h3>How to access signla value</h3>
+<p>
+  To access the value of a signal, we can use the <code>get()</code> method of
+  the signal object. This method returns the current value of the signal.
+</p>
+<h3>How to update signal value</h3>
+<p>
+  To update the value of a signal, we can use the <code>set()</code> method of
+  the signal object. This method takes a new value as an argument and updates
+  the signal's value.
+</p>
+
+<h2>Linked Signals in Angular</h2>
+<p>
+  Linked signals are a powerful feature in Angular that allows us to create
+  signals that are linked to other signals. This means that when one signal
+  changes, the linked signals will automatically update their values.
+</p>
+<p>
+  In this example, we will create two linked signals. The first signal will
+  represent the base value, and the second signal will represent the square of
+  the base value. When the base value changes, the square value will
+  automatically update.
+</p>
+
+<div style="display: flex; gap: 20px">
+  <div
+    style="
+      background-color: rgb(40, 162, 202);
+      width: 200px;
+      height: 30px;
+      border: 1px solid black;
+      text-align: center;
+    "
+  >
+  <b>{{ baseValue }}</b>
+  </div>
+  <button  (click)="incrementBaseValue()">Increment Base Value</button>

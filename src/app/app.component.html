@@ -1,22 +1,15 @@
-<h1>Angular 19 Tutorial</h1>
-<p>This is some paragraph.</p>
 
-<table style="width: 100%">
-  
-  <tr>
-      <app-admin></app-admin>
-  </tr>
-  <tr>
-    <app-data-binding></app-data-binding>
-  </tr>
-  <tr>
-    <app-ng-if></app-ng-if>
-  </tr>
-  <tr>
-    <app-ng-for></app-ng-for>
-  </tr>
-  <tr>
-    <app-ng-class></app-ng-class>
-  </tr>
+<!-- navbar.component.html -->
+<nav class="navbar">
+  <ul class="navbar-menu">
+    <li><a routerLink="/admin" routerLinkActive="active">Admin</a></li>
+    <li><a routerLink="/dataBinding" routerLinkActive="active">Data Binding</a></li>
+    <li><a routerLink="/ngIf" routerLinkActive="active">NgIf</a></li>
+    <li><a routerLink="/ngFor" routerLinkActive="active">NgFor</a></li>
+    <li><a routerLink="/ngClass" routerLinkActive="active">NgClass</a></li>
+    <li><a routerLink="/controlStatement" routerLinkActive="active">Control Statement</a></li>
+    <li><a routerLink="/signal" routerLinkActive="active">Signal</a></li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>
 
-</table>
