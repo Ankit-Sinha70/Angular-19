@@ -6,6 +6,7 @@ import { NgIfComponent } from './component/ng-if/ng-if.component';
 import { NgForComponent } from './component/ng-for/ng-for.component';
 import { NgClassComponent } from './component/ng-class/ng-class.component';
 import { SignalComponent } from './component/signal/signal.component';
+import { FormsComponent } from './component/forms/forms.component';
 
 export const routes: Routes = [
   {
@@ -36,5 +37,9 @@ export const routes: Routes = [
   {
     path: 'signal',
     component: SignalComponent,
+  },
+  {
+    path: 'forms',
+    component: FormsComponent,
   },
 ];
