@@ -7,6 +7,9 @@ import { NgForComponent } from './component/ng-for/ng-for.component';
 import { NgClassComponent } from './component/ng-class/ng-class.component';
 import { SignalComponent } from './component/signal/signal.component';
 import { FormsComponent } from './component/forms/forms.component';
+import { GetApiComponent } from './component/API/get-api/get-api.component';
+import { PostApiComponent } from './component/API/post-api/post-api.component';
+import { GmailConnectComponent } from './component/composio/composio.component';
 
 export const routes: Routes = [
   {
@@ -41,5 +44,17 @@ export const routes: Routes = [
   {
     path: 'forms',
     component: FormsComponent,
+  },
+  {
+    path: 'get-api',
+    component: GetApiComponent,
+  },
+  {
+    path: 'post-api',
+    component: PostApiComponent,
+  },
+  {
+    path: 'composio',
+    component: GmailConnectComponent,
   },
 ];

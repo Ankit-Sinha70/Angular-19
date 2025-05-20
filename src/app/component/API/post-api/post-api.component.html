@@ -1,0 +1,106 @@
+<div class="container mt-4">
+  <h2>Car Management System</h2>
+
+  <!-- Car List Section -->
+  <div class="mb-4">
+    <h3>Car List</h3>
+    <button class="btn btn-primary mb-3" (click)="getCarLists()">
+      Refresh Car List
+    </button>
+
+    <table class="table table-striped" *ngIf="carList.length > 0">
+      <thead>
+        <tr>
+          <th>Brand</th>
+          <th>Model</th>
+          <th>Year</th>
+          <th>Registration No</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let car of carList">
+          <td>{{ car.brand }}</td>
+          <td>{{ car.model }}</td>
+          <td>{{ car.year }}</td>
+          <td>{{ car.regNo }}</td>
+          <td><button class="btn btn-success" (click)="editCar(car)">Edit</button></td>
+          <td><button class="btn btn-danger">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <p *ngIf="carList.length === 0">
+      No cars found. Click 'Refresh Car List' to load cars.
+    </p>
+  </div>
+
+  <!-- Add Car Form Section -->
+  <div class="card">
+    <div class="card-header">
+      <h3>Add New Car</h3>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="brand" class="form-label">Brand</label>
+          <input
+            type="text"
+            id="brand"
+            name="brand"
+            class="form-control"
+            [(ngModel)]="carObj.brand"
+            required
+          />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="model" class="form-label">Model</label>
+          <input
+            type="text"
+            id="model"
+            name="model"
+            class="form-control"
+            [(ngModel)]="carObj.model"
+            required
+          />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="year" class="form-label">Year</label>
+          <input
+            type="text"
+            id="year"
+            name="year"
+            class="form-control"
+            [(ngModel)]="carObj.year"
+            required
+          />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="regNo" class="form-label">Registration Number</label>
+          <input
+            type="text"
+            id="regNo"
+            name="regNo"
+            class="form-control"
+            [(ngModel)]="carObj.regNo"
+            required
+          />
+        </div>
+        <div class="col-md-12 mb-3">
+          <label for="image" class="form-label">Image URL</label>
+          <input
+            type="text"
+            id="image"
+            name="image"
+            class="form-control"
+            [(ngModel)]="carObj.carImage"
+          />
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-success" (click)="addCar()">
+            Add Car
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

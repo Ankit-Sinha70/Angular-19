@@ -28,7 +28,7 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": ["https://unpkg.com/@composio/sdk@latest/dist/composio.umd.js"]
           },
           "configurations": {
             "production": {

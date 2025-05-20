@@ -1,0 +1,25 @@
+<h3>Get Api in Angular</h3>
+<button (click)="getUsers()">Get Users</button>
+
+<div class="row" style="width: 100%;">
+   <div class="col-md-16">
+    <table class="table table-bordered">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Website</th>
+        </tr>
+        <tr *ngFor="let user of userList">
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.phone }}</td>
+            <td>{{ user.website }}</td>
+        </tr>
+    </table>
+
+   </div>
+</div>
+
