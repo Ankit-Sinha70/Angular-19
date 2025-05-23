@@ -11,55 +11,72 @@ import { GetApiComponent } from './component/API/get-api/get-api.component';
 import { PostApiComponent } from './component/API/post-api/post-api.component';
 import { CustomerComponent } from './component/customer/customer.component';
 import { LifecyleComponentComponent } from './component/lifecyle-component/lifecyle-component.component';
-
+import { LoginComponent } from './component/login/login.component';
+import { LayoutComponent } from './component/layout/layout.component';
 export const routes: Routes = [
   {
-    path: 'admin',
-    component: AdminComponent,
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full',
   },
   {
-    path: 'dataBinding',
-    component: DataBindingComponent,
+    path: 'login',
+    component: LoginComponent,
   },
   {
-    path: 'ngIf',
-    component: NgIfComponent,
+    path:'',
+    component: LayoutComponent,
+    children: [
+      {
+        path: 'admin',
+        component: AdminComponent,
+      },
+      {
+        path: 'dataBinding',
+        component: DataBindingComponent,
+      },
+      {
+        path: 'ngIf',
+        component: NgIfComponent,
+      },
+      {
+        path: 'ngFor',
+        component: NgForComponent,
+      },
+      {
+        path: 'ngClass',
+        component: NgClassComponent,
+      },
+    
+      {
+        path: 'controlStatement',
+        component: ControlStatementComponent,
+      },
+      {
+        path: 'signal',
+        component: SignalComponent,
+      },
+      {
+        path: 'forms',
+        component: FormsComponent,
+      },
+      {
+        path: 'get-api',
+        component: GetApiComponent,
+      },
+      {
+        path: 'post-api',
+        component: PostApiComponent,
+      },
+      {
+        path: 'customer',
+        component: CustomerComponent,
+      },
+      {
+        path: 'life-cycle',
+        component: LifecyleComponentComponent,
+      },
+    ]
   },
-  {
-    path: 'ngFor',
-    component: NgForComponent,
-  },
-  {
-    path: 'ngClass',
-    component: NgClassComponent,
-  },
-
-  {
-    path: 'controlStatement',
-    component: ControlStatementComponent,
-  },
-  {
-    path: 'signal',
-    component: SignalComponent,
-  },
-  {
-    path: 'forms',
-    component: FormsComponent,
-  },
-  {
-    path: 'get-api',
-    component: GetApiComponent,
-  },
-  {
-    path: 'post-api',
-    component: PostApiComponent,
-  },
-  {
-    path: 'customer',
-    component: CustomerComponent,
-  },
-  {
-    path: 'life-cycle',
-    component: LifecyleComponentComponent,
-  },
+  
 ];

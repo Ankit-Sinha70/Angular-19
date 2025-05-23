@@ -1,0 +1,71 @@
+<nav class="navbar">
+  <ul
+    class="navbar-menu"
+    style="background-color: #2c3e50; color: white; gap: 0px"
+  >
+    <li><a routerLink="/admin" routerLinkActive="active">Admin</a></li>
+    <li>
+      <a routerLink="/dataBinding" routerLinkActive="active">Data Binding</a>
+    </li>
+    <li><a routerLink="/ngIf" routerLinkActive="active">NgIf</a></li>
+    <li><a routerLink="/ngFor" routerLinkActive="active">NgFor</a></li>
+    <li><a routerLink="/ngClass" routerLinkActive="active">NgClass</a></li>
+    <li>
+      <a routerLink="/controlStatement" routerLinkActive="active"
+        >Control Statement</a
+      >
+    </li>
+    <li><a routerLink="/signal" routerLinkActive="active">Signal</a></li>
+    <li><a routerLink="/forms" routerLinkActive="active">Forms</a></li>
+    <li class="nav-item dropdown">
+      <a
+        class="nav-link dropdown-toggle"
+        id="navbarDropdown"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        >API</a
+      >
+      <ul
+        class="dropdown-menu"
+        aria-labelledby="navbarDropdown"
+        style="background-color: #2c3e50"
+      >
+        <li>
+          <a
+            class="dropdown-item"
+            routerLink="/get-api"
+            routerLinkActive="active"
+            >GET-Api</a
+          >
+        </li>
+        <li>
+          <a
+            class="dropdown-item"
+            routerLink="/post-api"
+            routerLinkActive="active"
+            >POST-Api</a
+          >
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="" routerLinkActive="active"
+            >PUT-Api</a
+          >
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="" routerLinkActive="active"
+            >DELETE-Api</a
+          >
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a routerLink="/customer" routerLinkActive="active">Customer</a>
+    </li>
+    <li>
+      <a routerLink="/life-cycle" routerLinkActive="active">Life Cycle</a>
+    </li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>
