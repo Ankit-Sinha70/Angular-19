@@ -13,6 +13,7 @@ import { CustomerComponent } from './component/customer/customer.component';
 import { LifecyleComponentComponent } from './component/lifecyle-component/lifecyle-component.component';
 import { LoginComponent } from './component/login/login.component';
 import { LayoutComponent } from './component/layout/layout.component';
+import { NgTempNgContainerComponent } from './component/ng-temp-ng-container/ng-temp-ng-container.component';
 export const routes: Routes = [
   {
     path: '',
@@ -75,6 +76,10 @@ export const routes: Routes = [
       {
         path: 'life-cycle',
         component: LifecyleComponentComponent,
+      },
+      {
+        path: 'ng-container',
+        component: NgTempNgContainerComponent,
       },
     ]
   },

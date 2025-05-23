@@ -1,0 +1,35 @@
+<ng-container *ngIf="!isLoader">
+  <div class="container" style="text-align: center">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Welcome to our application</h1>
+        <p>This content is displayed when the loader is not active.</p>
+      </div>
+    </div>
+  </div>
+  <div style="text-align: center">
+    <h4>Ng-Container</h4>
+    <p>
+      A special element that can hold structural directives without adding new
+      elements to the DOM.
+    </p>
+    <p>
+      The
+      <ng-container>
+        is a syntax element recognized by the Angular parser. It's not a
+        directive, component, class, or interface. It's more like the curly
+        braces in a JavaScript if-block</ng-container
+      >
+    </p>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="isLoader" style="text-align: center">
+  <div style="text-align: center">
+    <div class="spinner-border text-primary" role="status"></div>
+    <div class="spinner-border text-secondary" role="status"></div>
+    <div class="spinner-border text-success" role="status"></div>
+    <div class="spinner-border text-danger" role="status"></div>
+    <div class="spinner-border text-warning" role="status"></div>
+  </div>
+</ng-container>
