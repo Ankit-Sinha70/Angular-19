@@ -13,51 +13,68 @@ import { FormsModule } from '@angular/forms';
 })
 export class PostApiComponent {
   constructor(private http: HttpClient) {}
-  carList: any[] = [];
-  carObj: any = {
-    carId: "",
-    brand: '',
-    model: '',
-    year: "",
-    color: '',
-    dailyRate: "",
-    carImage: '',
-    regNo: '',
+  empList: any[] = [];
+  empObj: any = {
+    employeeId: '',
+    employeeName: '',
+    emailId: '',
+    contactNo: '',
+    role: '',
+    password: '',
+    gender: '',
+    deptId: '',
   };
 
-
-  getCarLists() {
-    debugger
+  getEmpLists() {
     this.http
-      .get('/api/CarRentalApp/GetCars')
-      .subscribe((res: any) => {
-        if (res.result == true) {
-          debugger;
-          this.carList = res.data;
-        } else {
-          alert('Failed to get car list');
-        }
-      });
-  }
-
-  addCar() {
-    debugger;
-    this.http
-      .post(
-        '/api/CarRentalApp/CreateNewCar',
-        this.carObj
+      .get(
+        'https://freeapi.miniprojectideas.com/api/EmployeeLeave/GetEmployees'
       )
       .subscribe((res: any) => {
-        debugger;
         if (res.result) {
-          alert('Car Added Successfully');
+          this.empList = res.data;
         } else {
-          alert('Failed to add car');
+          alert('Failed to get employee list');
+        }
+      });
+  }
+  // ngOnInit() {
+  //   this.getEmpLists();
+  // }
+
+  addEmployee() {
+    this.http
+      .post(
+        'https://freeapi.miniprojectideas.com/api/EmployeeLeave/CreateEmployee',
+        this.empObj
+      )
+      .subscribe((res: any) => {
+        if (res.result) {
+          alert('Employee Added Successfully');
+        } else {
+          alert('Failed to add employee');
         }
       });
   }
 
-  editCar(car: any) {
-    this.carObj = car;
+  editEmployee(emp: any) {
+    this.empObj = emp;
+    this.getEmpLists();
+  }
+
+  deleteEmployee(empId: string) {
+    const isDelete = confirm('Are you sure you want to delete this employee?');
+    if (!isDelete) return;
+    this.http
+      .delete(
+        `https://freeapi.miniprojectideas.com/api/EmployeeLeave/DeleteEmployee/${empId}`
+      )
+      .subscribe((res: any) => {
+        if (res.result) {
+          alert('Employee Deleted Successfully');
+        } else {
+          alert('Failed to delete employee');
+        }
+      });
   }
 }

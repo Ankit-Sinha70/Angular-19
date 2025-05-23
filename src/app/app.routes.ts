@@ -9,7 +9,8 @@ import { SignalComponent } from './component/signal/signal.component';
 import { FormsComponent } from './component/forms/forms.component';
 import { GetApiComponent } from './component/API/get-api/get-api.component';
 import { PostApiComponent } from './component/API/post-api/post-api.component';
-import { GmailConnectComponent } from './component/composio/composio.component';
+import { CustomerComponent } from './component/customer/customer.component';
+import { LifecyleComponentComponent } from './component/lifecyle-component/lifecyle-component.component';
 
 export const routes: Routes = [
   {
@@ -54,7 +55,11 @@ export const routes: Routes = [
     component: PostApiComponent,
   },
   {
-    path: 'composio',
-    component: GmailConnectComponent,
+    path: 'customer',
+    component: CustomerComponent,
+  },
+  {
+    path: 'life-cycle',
+    component: LifecyleComponentComponent,
   },
 ];

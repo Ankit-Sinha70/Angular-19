@@ -1,59 +1,71 @@
-<h2>
-    This is a Admin component.
-</h2>
+<h2>This is a Admin component.</h2>
 <p>
-    The Admin component is responsible for managing the admin-related functionality of the application.
-    It provides a user interface for administrators to perform various tasks and manage the application settings.
+  The Admin component is responsible for managing the admin-related
+  functionality of the application. It provides a user interface for
+  administrators to perform various tasks and manage the application settings.
 </p>
 <p>
-    The Admin component may include features such as user management, content moderation, and system configuration.
-    It is typically accessible only to authorized users with administrative privileges.
+  The Admin component may include features such as user management, content
+  moderation, and system configuration. It is typically accessible only to
+  authorized users with administrative privileges.
 </p>
 
 <h2>Routing in Angular</h2>
 <p>
-    Routing in Angular is a powerful feature that allows developers to create single-page applications (SPAs) with multiple views.
-    It enables navigation between different components and pages without reloading the entire application.
-    The Angular Router provides a way to define routes, handle navigation, and manage the application's state.
+  Routing in Angular is a powerful feature that allows developers to create
+  single-page applications (SPAs) with multiple views. It enables navigation
+  between different components and pages without reloading the entire
+  application. The Angular Router provides a way to define routes, handle
+  navigation, and manage the application's state.
 </p>
 
 <h2>How to create routes</h2>
 <p>
-    To create routes in Angular, you need to define a routing module that specifies the routes and their corresponding components.
-    The routing module is typically created in a separate file and imported into the main application module.
-    Here are the steps to create routes in Angular:
+  To create routes in Angular, you need to define a routing module that
+  specifies the routes and their corresponding components. The routing module is
+  typically created in a separate file and imported into the main application
+  module. Here are the steps to create routes in Angular:
 </p>
 
 <ol>
-    <li>
-        Create a routing module file (e.g., <code>app-routing.module.ts</code>) in your Angular project.
-    </li>
-    <li>
-        <!-- Import the necessary modules from Angular's router package: -->
-        <!-- <pre><code>import { NgModule } from '@angular/core'; -->
-        <!-- import { RouterModule, Routes } from '@angular/router';</code></pre> -->
-    </li>
-    <li>
+  <li>
+    Create a routing module file (e.g., <code>app-routing.module.ts</code>) in
+    your Angular project.
+  </li>
+  <li>
+    <!-- Import the necessary modules from Angular's router package: -->
+    <!-- <pre><code>import { NgModule } from '@angular/core'; -->
+    <!-- import { RouterModule, Routes } from '@angular/router';</code></pre> -->
+  </li>
+  <li></li>
 </ol>
 
 <h2>To set default route in Angular</h2>
 <p>
-    To set a default route in Angular, you can use the <code>redirectTo</code> property in your routing configuration.
-    The default route is the route that will be activated when the application is loaded without any specific URL.
-    Here are the steps to set a default route:
+  To set a default route in Angular, you can use the
+  <code>redirectTo</code> property in your routing configuration. The default
+  route is the route that will be activated when the application is loaded
+  without any specific URL. Here are the steps to set a default route:
 </p>
-<!-- //example in code only -->
-<!-- { path: '', redirectTo: '/home', pathMatch: 'full' }, -->
-<!-- { path: '**', component: NotFoundComponent } // Wildcard route for 404 errors -->
 
-<!-- @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-}) -->
-  
+<h3>Progress Bar</h3>
+<app-progress-bar [progressValue]="progress"></app-progress-bar>
 
-
-
-
+<h3>Tabs</h3>
+<div>
+  <app-tabs [tabs]="['London', 'Paris', 'Tokyo']" (onTabClicked)="onTabChange($event)"></app-tabs>
+</div>
+@if(selectedTab == 'London') {
+<h3>London</h3>
+<p>London is the capital city of England.</p>   
+}
+@if(selectedTab == 'Paris') {
+<h3>Paris</h3>
+<p>Paris is the capital of France.</p>
+}
+@if(selectedTab == 'Tokyo') {
+<h3>Tokyo</h3>
+<p>Tokyo is the capital of Japan.</p>
+}
 
 

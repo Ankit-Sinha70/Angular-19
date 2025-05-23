@@ -1,0 +1,17 @@
+<div
+  style="
+    width: 50%;
+    height: 24px;
+    background-color: #f2eeee;
+    border-radius: 5px;
+    align-items: center;
+    margin: 0 auto;
+    border: 1px solid #4caf50;
+  "
+>
+  <div
+    [ngStyle]="{ width: progressValue + '%' }"
+    style="height: 24px; background-color: #4caf50"
+  ></div>
+  <p>{{ progressValue }}%</p>
+</div>

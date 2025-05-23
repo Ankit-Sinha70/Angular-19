@@ -1,0 +1,51 @@
+<h3>Life Cycle Component</h3>
+<!-- definations -->
+
+<h3>Pipes in Angular</h3>
+<p>
+  {{ message | uppercase }}
+</p>
+<p>
+  {{ message | lowercase }}
+</p>
+<p>
+  {{ date | date: "fullDate" }}
+</p>
+<p>
+  {{ date | date: "shortDate" }}
+</p>
+<p>
+  {{ date | date: "shortTime" }}
+</p>
+<p>
+  {{ date | date: "shortTime" }}
+</p>
+<p>
+{{ amount | currency: currency }}
+</p>
+<p>
+  {{ percentage | percent }}
+</p>
+<p>
+  {{ object | json }}
+</p>
+<p>
+  {{ array | json }}
+</p>
+<button (click)="toggle()">Toggle</button>
+
+<button (click)="toggleCurrency()">Toggle Currency</button>
+
+<button (click)="togglePromise()">Toggle Promise</button>
+
+<p>
+  {{ promise | async }}
+</p>
+
+<button (click)="toggleSlice()">Toggle Slice</button>
+
+<p>
+  {{ array | slice: 0:3 | json }}
+</p>
+
+

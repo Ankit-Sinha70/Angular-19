@@ -7,10 +7,12 @@ import { NgForComponent } from './component/ng-for/ng-for.component';
 import { CommonModule, NgClass } from '@angular/common';
 import { NgClassComponent } from './component/ng-class/ng-class.component';
 import { ControlStatementComponent } from './component/control-statement/control-statement.component';
+import { CustomerComponent } from './component/customer/customer.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink],
+  standalone: true,
+  imports: [RouterOutlet, RouterLink, CommonModule, CustomerComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

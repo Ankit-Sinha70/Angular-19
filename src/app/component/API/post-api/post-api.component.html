@@ -1,103 +1,183 @@
-<div class="container mt-4">
-  <h2>Car Management System</h2>
+<div style="width: 100%; display: flex; flex-direction: column">
+  <h3>Employee Management System</h3>
 
-  <!-- Car List Section -->
+  <!-- Employee List Section -->
   <div class="mb-4">
-    <h3>Car List</h3>
-    <button class="btn btn-primary mb-3" (click)="getCarLists()">
-      Refresh Car List
+    <h3>Employee List</h3>
+    <button class="btn btn-primary mb-3" (click)="getEmpLists()">
+      Refresh Employee List
+    </button>
+    <button
+      class="btn btn-success mb-3 ms-2"
+      data-bs-toggle="modal"
+      data-bs-target="#addEmployeeModal"
+    >
+      Add New Employee
     </button>
 
-    <table class="table table-striped" *ngIf="carList.length > 0">
+    <table class="table table-striped" *ngIf="empList.length > 0">
       <thead>
         <tr>
-          <th>Brand</th>
-          <th>Model</th>
-          <th>Year</th>
-          <th>Registration No</th>
-          <th>Actions</th>
+          <th>EmployeeId</th>
+          <th>EmployeeName</th>
+          <th>Email</th>
+          <th>ContactNo</th>
+          <th>Role</th>
+          <th>Password</th>
+          <th>Gender</th>
+          <th>Dept.Id</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let car of carList">
-          <td>{{ car.brand }}</td>
-          <td>{{ car.model }}</td>
-          <td>{{ car.year }}</td>
-          <td>{{ car.regNo }}</td>
-          <td><button class="btn btn-success" (click)="editCar(car)">Edit</button></td>
-          <td><button class="btn btn-danger">Delete</button></td>
+        <tr *ngFor="let emp of empList">
+          <td>{{ emp.employeeId }}</td>
+          <td>{{ emp.employeeName }}</td>
+          <td>{{ emp.emailId }}</td>
+          <td>{{ emp.contactNo }}</td>
+          <td>{{ emp.role }}</td>
+          <td>{{ emp.password }}</td>
+          <td>{{ emp.gender }}</td>
+          <td>{{ emp.deptId }}</td>
+          <td>
+            <button
+              class="btn btn-warning"
+              data-bs-toggle="modal"
+              data-bs-target="#addEmployeeModal"
+              (click)="editEmployee(emp)"
+            >
+              Edit
+            </button>
+            <button
+              class="btn btn-danger"
+              (click)="deleteEmployee(emp.employeeId)"
+            >
+              Delete
+            </button>
+          </td>
         </tr>
       </tbody>
     </table>
-    <p *ngIf="carList.length === 0">
-      No cars found. Click 'Refresh Car List' to load cars.
+    <p *ngIf="empList.length === 0">
+      No employee found. Click 'Refresh Employee List' to load employee.
     </p>
   </div>
 
-  <!-- Add Car Form Section -->
-  <div class="card">
-    <div class="card-header">
-      <h3>Add New Car</h3>
-    </div>
-    <div class="card-body">
-      <div class="row">
-        <div class="col-md-6 mb-3">
-          <label for="brand" class="form-label">Brand</label>
-          <input
-            type="text"
-            id="brand"
-            name="brand"
-            class="form-control"
-            [(ngModel)]="carObj.brand"
-            required
-          />
+  <!-- Add Employee Modal -->
+  <div
+    class="modal fade"
+    id="addEmployeeModal"
+    tabindex="-1"
+    aria-labelledby="addEmployeeModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addEmployeeModalLabel">
+            Create New Employee
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
         </div>
-        <div class="col-md-6 mb-3">
-          <label for="model" class="form-label">Model</label>
-          <input
-            type="text"
-            id="model"
-            name="model"
-            class="form-control"
-            [(ngModel)]="carObj.model"
-            required
-          />
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="employeeId" class="form-label">EmployeeId</label>
+              <input
+                type="text"
+                id="employeeId"
+                class="form-control"
+                [(ngModel)]="empObj.employeeId"
+                required
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="employeeName" class="form-label">EmployeeName</label>
+              <input
+                type="text"
+                id="employeeName"
+                class="form-control"
+                [(ngModel)]="empObj.employeeName"
+                required
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="emailId" class="form-label">EmailId</label>
+              <input
+                type="text"
+                id="emailId"
+                class="form-control"
+                [(ngModel)]="empObj.emailId"
+                required
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="contactNo" class="form-label">ContactNo</label>
+              <input
+                type="text"
+                id="contactNo"
+                class="form-control"
+                [(ngModel)]="empObj.contactNo"
+                required
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="role" class="form-label">Role</label>
+              <input
+                type="text"
+                id="role"
+                class="form-control"
+                [(ngModel)]="empObj.role"
+                required
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="text"
+                id="password"
+                class="form-control"
+                [(ngModel)]="empObj.password"
+                required
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="gender" class="form-label">Gender</label>
+              <input
+                type="text"
+                id="gender"
+                class="form-control"
+                [(ngModel)]="empObj.gender"
+                required
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="deptId" class="form-label">Dept.Id</label>
+              <input
+                type="text"
+                id="deptId"
+                class="form-control"
+                [(ngModel)]="empObj.deptId"
+                required
+              />
+            </div>
+          </div>
         </div>
-        <div class="col-md-6 mb-3">
-          <label for="year" class="form-label">Year</label>
-          <input
-            type="text"
-            id="year"
-            name="year"
-            class="form-control"
-            [(ngModel)]="carObj.year"
-            required
-          />
-        </div>
-        <div class="col-md-6 mb-3">
-          <label for="regNo" class="form-label">Registration Number</label>
-          <input
-            type="text"
-            id="regNo"
-            name="regNo"
-            class="form-control"
-            [(ngModel)]="carObj.regNo"
-            required
-          />
-        </div>
-        <div class="col-md-12 mb-3">
-          <label for="image" class="form-label">Image URL</label>
-          <input
-            type="text"
-            id="image"
-            name="image"
-            class="form-control"
-            [(ngModel)]="carObj.carImage"
-          />
-        </div>
-        <div class="col-12">
-          <button type="submit" class="btn btn-success" (click)="addCar()">
-            Add Car
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">
+            Close
+          </button>
+          <button
+            class="btn btn-success"
+            (click)="addEmployee()"
+            data-bs-dismiss="modal"
+          >
+            Add Employee
           </button>
         </div>
       </div>
