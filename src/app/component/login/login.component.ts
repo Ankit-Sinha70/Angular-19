@@ -31,25 +31,29 @@ export class LoginComponent {
   }
 
   onLogin() {
-    console.log('Login attempt with:', this.loginObj);
-    if(this.loginObj.emailId == 'admin' && this.loginObj.password == 'admin@1234') {
-      console.log('Login successful, attempting navigation...');
-      this.router.navigate(['/admin']).then(success => {
-        if (!success) {
-          console.error('Navigation failed');
-          alert('Navigation failed - please check route configuration');
-        }
-      });
-    } else {
-      alert('Invalid email or password');
-    }
+    // console.log('Login attempt with:', this.loginObj);
+    // if(this.loginObj.emailId == 'admin' && this.loginObj.password == 'admin@1234') {
+    //   console.log('Login successful, attempting navigation...');
+    //   this.router.navigate(['/admin']).then(success => {
+    //     if (!success) {
+    //       console.error('Navigation failed');
+    //       alert('Navigation failed - please check route configuration');
+    //     }
+    //   });
+    // } else {
+    //   alert('Invalid email or password');
+    // }
 
     // Apicall
 
-    // this.http.post("https://projectapi.gerasim.in/api/UserApp/login", this.apiLoginObj).subscribe((res: any) => {
-    //   this.router.navigateByUrl('admin');
-    // }, (err: any) => {
-    //   alert('Invalid email or password');
-    // })
+    this.http.post("https://projectapi.gerasim.in/api/UserApp/login", this.apiLoginObj).subscribe((res: any) => {
+      debugger
+      localStorage.setItem("angular-19-user", res.data.userId)
+      localStorage.setItem("angular-19-token", res.data.token)
+      localStorage.setItem("angular19TokenData", JSON.stringify(res.data))
+      this.router.navigateByUrl('admin');
+    }, (err: any) => {
+      alert('Invalid email or password');
+    })
   }
 }
