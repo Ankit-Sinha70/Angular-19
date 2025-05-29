@@ -1,4 +1,4 @@
-<body>
+<!-- <body>
   <div class="container" id="container">
     <div class="form-container signup-container">
       <form action="#">
@@ -27,15 +27,15 @@
         <span>or use your account</span>
         <input
           type="text"
-          name="emailId"
+          name="userName"
           placeholder="Email"
-          [(ngModel)]="loginObj.emailId"
+          [(ngModel)]="apiLoginObj.userName"
         />
         <input
           type="password"
           name="password"
           placeholder="Password"
-          [(ngModel)]="loginObj.password"
+          [(ngModel)]="apiLoginObj.password"
         />
         <a href="#">Forgot your password?</a>
         <button (click)="onLogin()">Login</button>
@@ -58,4 +58,122 @@
       </div>
     </div>
   </div>
-</body>
+</body> -->
+
+<div class="parentContainer">
+  <div class="container" id="container">
+    <!-- Sign Up Form -->
+
+    <div class="form-container sign-up-container">
+      <form action="#" #form="ngForm">
+        <h1>Create Account 🚀</h1>
+
+        <div class="social-container">
+          <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+
+          <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+
+          <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+
+        <span>or use your email for registration</span>
+
+        <input
+          type="text"
+          placeholder="👤 Name"
+          name="fullName"
+          [(ngModel)]="signupObj.fullName"
+          required
+        />
+
+        <input
+          type="email"
+          placeholder="📧 Email"
+          name="emailId"
+          [(ngModel)]="signupObj.emailId"
+          required
+        />
+
+        <input
+          type="password"
+          placeholder="🔒 Password"
+          name="password"
+          [(ngModel)]="signupObj.password"
+          required
+        />
+        <div class="form-group">
+          <button type="button" (click)="onRegisterUser(signupObj)" [disabled]="form.invalid">Sign Up</button>
+
+        </div>
+      </form>
+    </div>
+
+    <!-- Sign In Form -->
+
+    <div class="form-container sign-in-container">
+      <form action="#">
+        <h1>Sign In 👋</h1>
+
+        <div class="social-container">
+          <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+
+          <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+
+          <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+
+        <span>or use your account</span>
+
+        <input
+          type="email"
+          name="emailId"
+          placeholder="📧 Email"
+          [(ngModel)]="apiLoginObj.emailId"
+        />
+
+        <input
+          type="password"
+          name="password"
+          placeholder="🔒 Password"
+          [(ngModel)]="apiLoginObj.password"
+        />
+
+        <a href="#">Forgot your password? 🤔</a>
+
+        <button type="submit" (click)="onLogin()">Sign In</button>
+      </form>
+    </div>
+
+    <!-- Overlay Container -->
+
+    <div class="overlay-container">
+      <div class="overlay">
+        <!-- Overlay Left Panel (Shown when Sign In is active) -->
+
+        <div class="overlay-panel overlay-left">
+          <h1>Welcome Back! 🎉</h1>
+
+          <p>To keep connected with us please login with your personal info</p>
+
+          <button class="ghost" id="signIn" (click)="toggleForm()">
+            Sign In
+          </button>
+        </div>
+
+        <!-- Overlay Right Panel (Shown when Sign Up is active) -->
+
+        <div class="overlay-panel overlay-right">
+          <h1>Hello, Friend! ✨</h1>
+
+          <p>Enter your personal details and start your journey with us</p>
+
+          <button class="ghost" id="signUp" (click)="toggleForm()">
+            Sign Up
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="copyright">copyright by dipesh</div>
