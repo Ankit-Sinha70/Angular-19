@@ -1,0 +1,7 @@
+<button 
+  [class]="'btn ' + variant + (loading ? ' loading' : '')" 
+  [disabled]="disabled || loading"
+  (click)="onClick($event)">
+  Address
+  <ng-content></ng-content>
+</button>

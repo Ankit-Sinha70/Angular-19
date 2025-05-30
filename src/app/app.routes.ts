@@ -15,6 +15,7 @@ import { LoginComponent } from './component/login/login.component';
 import { LayoutComponent } from './component/layout/layout.component';
 import { NgTempNgContainerComponent } from './component/ng-temp-ng-container/ng-temp-ng-container.component';
 import { CrudOperationComponent } from './component/crud-operation/crud-operation.component';
+import { MyButtonComponent } from './Reusable/my-button/my-button.component';
 export const routes: Routes = [
   {
     path: '',
@@ -85,6 +86,10 @@ export const routes: Routes = [
       {
         path: 'crud-operation',
         component: CrudOperationComponent,
+      },
+      {
+        path: 'reusable',
+        component: MyButtonComponent,
       },
     ]
   },

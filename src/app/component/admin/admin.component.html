@@ -68,4 +68,15 @@
 <p>Tokyo is the capital of Japan.</p>
 }
 
+<ng-template #myTeamContent>
+  <!-- Content for your card goes here -->
+  <p>This is content from the admin component's template!</p>
+  <ul>
+    <li>Team Member 1</li>
+    <li>Team Member 2</li>
+  </ul>
+</ng-template>
+
+<app-my-card [cardTitle]="'Test Card'" [htmlTemplate]="myTeamContent"></app-my-card>
+
 
